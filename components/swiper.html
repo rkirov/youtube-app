@@ -1,0 +1,6 @@
+<div !if="leftShowing()" (swipeleft)="toggle()">
+  <content select=".left"></content>
+</div>
+<div !if="rightShowing()" (swiperight)="toggle()">
+  <content select=".right"></content>
+</div>

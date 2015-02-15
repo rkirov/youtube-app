@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+description {
+  font-size: 10px;
+}
+
+iframe {
+  border: 0;
+}
+
+.thumb {
+  width: 340px;
+}
+
+.info-card {
+  height: 300px;
+  width: 90%;
+  font-size: 20px;
+}

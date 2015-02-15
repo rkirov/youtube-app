@@ -1,0 +1,17 @@
+<style>
+  @import url('components/video.css');
+</style>
+<img class="thumb" !if="!player" [src]="video.snippet.thumbnails.high.url"
+     (tap)="togglePlayer()">
+<iframe !if="player" [src]="url()"></iframe>
+<swiper>
+  <div class="left info-card">
+    <div>Viewed: {{video.statistics.viewCount}}</div>
+    <div>Likes: {{video.statistics.likeCount}}</div>
+    <div>Dislikes: {{video.statistics.dislikeCount}}</div>
+    <thumbs (change)="thumbsChange($event)"></thumbs>
+  </div>
+  <div class="right info-card">
+    <div class="description">{{video.snippet.description}}</div>
+  </div>
+</swiper>

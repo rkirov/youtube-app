@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>youtube angular 2 demo app</title>
+    <!-- loading es6-module-loader.js shims promises, so it has to come before zone.js -->
+    <script src="/deps/traceur.js"></script>
+    <script src="/deps/system.js"></script>
+
+    <script src="/deps/zone.js"></script>
+    <script src="/deps/long-stack-trace-zone.js"></script>
+
+    <script src="/deps/hammer.min.js"></script>
+
+  </head>
+  <body>
+    <youtube-app>Loading... Please wait</youtube-app>
+    <script>
+      System.paths = {
+        '*':'/ng/*.js',
+        'main': 'main.js',
+        'components/*': 'components/*.js',
+      };
+      System.import('main').then(function(module) {
+        module.main();
+      }, console.log.bind(console));
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=googleClientReady"></script>
+  </body>
+</html>
+
