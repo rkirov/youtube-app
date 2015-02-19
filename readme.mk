@@ -1,30 +1,6 @@
 # Getting started
-1) npm install
-2) in node_modules/angular2 and node_modules/rtts_assert run:
-	- `npm install`
-	- `node es5build -d ../<package>-es5`
-3) serve
-
-# Data
-- video
-	 - id
-   - title
-	 - description
-	 - published
-	 - thumbnails
-	   - default
-		   - url
-		 - medium
-		   - url
-		 - high
-		   - url
-	 - statistics
-	   - viewCount
-		 - likeCount
-		 - dislikeCount
-		 - favoriteCount
-		 - commentCount
-	 - comments (??? custom)
+1) run `./build.sh`
+2) serve
 
 # components
 app
@@ -38,7 +14,6 @@ app
 		 - comments with input
 		 	 - comments
 		    	- comments
-
 
 # points to emphasize
 - template syntax
