@@ -28,11 +28,6 @@ export class YoutubeApp {
     }
   }
 
-  j(obj) {
-    console.log('called');
-    return JSON.stringify(obj);
-  }
-
   makeSearch() {
     gapi.client.youtube.search.list({
       part: 'snippet',
@@ -58,12 +53,6 @@ export class YoutubeApp {
       this.lc.tick();
     });
   }
-}
-
-// make a promise
-// right now it always fires before traceur transpiles ng2.
-window.googleClientReady = () => {
-  console.log('client ready');
 }
 
 export function main() {

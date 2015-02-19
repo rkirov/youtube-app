@@ -3,24 +3,35 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>youtube angular 2 demo app</title>
-    <!-- loading es6-module-loader.js shims promises, so it has to come before zone.js -->
-    <script src="/deps/traceur.js"></script>
-    <script src="/deps/system.js"></script>
+    <script src="/node_modules/systemjs/node_modules/es6-module-loader/node_modules/traceur/bin/traceur.js"></script>
+    <script src="/node_modules/systemjs/node_modules/es6-module-loader/dist/es6-module-loader-sans-promises.js"></script>
+    <script src="/node_modules/systemjs/dist/system.js"></script>
+    <script src="/node_modules/zone.js/zone.js"></script>
+    <script src="/node_modules/zone.js/long-stack-trace-zone.js"></script>
+    <script src="/node_modules/hammerjs/hammer.min.js"></script>
+    <script>
+      // atscript with runtime-type assertions.
+      System.traceurOptions = {
+        annotations: true,
+        memberVariables: true,
+        typeAssertions: true,
+        typeAssertionModule: 'rtts_assert/rtts_assert',
+        types: true
+      };
 
-    <script src="/deps/zone.js"></script>
-    <script src="/deps/long-stack-trace-zone.js"></script>
-
-    <script src="/deps/hammer.min.js"></script>
-
+      System.paths = {
+        // angular2
+        'angular2/*':'/node_modules/ng2/*.js',
+        'rtts_assert/*': '/node_modules/rtts_assert-es5/*.js',
+        // project own.
+        'main': 'main.js',
+        'components/*': 'components/*.js',
+      };
+    </script>
   </head>
   <body>
     <youtube-app>Loading... Please wait</youtube-app>
     <script>
-      System.paths = {
-        '*':'/ng/*.js',
-        'main': 'main.js',
-        'components/*': 'components/*.js',
-      };
       System.import('main').then(function(module) {
         module.main();
       }, console.log.bind(console));
