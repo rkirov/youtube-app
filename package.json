@@ -1,0 +1,19 @@
+{
+  "name": "youtube-demo",
+  "version": "0.0.1",
+  "description": "A simple youtube app using Angular 2.0",
+  "main": "main.js",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.7.dev",
+    "hammerjs": "^2.0.4",
+    "rtts_assert": "^2.0.0-alpha.8",
+    "systemjs": "^0.14.1",
+    "zone.js": "^0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
