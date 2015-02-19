@@ -65,7 +65,7 @@ app
 
 [x] add events
 [x] sync with npm
+[x] test with es5 compiled output
 [ ] bind to video properties
 [ ] insert polymer player
 [ ] test on real device
-[ ] test with es5 compiled output
