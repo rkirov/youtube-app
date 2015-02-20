@@ -1,5 +1,4 @@
 import * as ng from 'angular2/angular2';
-import {LifeCycle} from 'angular2/src/core/life_cycle/life_cycle';
 import {Video} from 'components/video';
 import {YoutubeService} from 'services/youtube';
 
@@ -13,13 +12,9 @@ import {YoutubeService} from 'services/youtube';
 })
 export class YoutubeApp {
   videos;
-  constructor(lc: LifeCycle, yt: YoutubeService) {
+  constructor(yt: YoutubeService) {
     this.videos = [];
-    this.lc = lc;
-    yt.init().then((videos) => {
-      this.videos = videos;
-      lc.tick();  // investigate why needed?
-    });
+    yt.init().then((videos) => this.videos = videos);
   }
 }
 
