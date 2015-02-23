@@ -1,5 +1,23 @@
-<h3>Angular 2 Youtube Demo</h3>
-<div !foreach="var video in videos">
-  <youtube-video [video]="video"></youtube-video>
+<style>
+  @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css');
+  * {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+<div class="container-fluid">
+  <h1>Angular 2 <br> Youtube Demo</h1>
+  <div class="row" [control-group]="form">
+    <div class="col-xs-4"> Search </div>
+    <input class="col-xs-6" control-name="input" type="text">
+    <button (click)="fetch()">Fetch</button>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-xs-4"> Shown </div>
+    <div class="col-xs-6"> {{videos.length}} </div>
+  </div>
+  <br>
+  <div class="row" *foreach="var video in videos">
+    <youtube-video [video]="video"></youtube-video>
+  </div>
 </div>
-Total: {{videos.length}}

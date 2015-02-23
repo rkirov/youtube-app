@@ -22,6 +22,10 @@ export class Video {
     return this.video.player.embedHtml.match(/src='([^']*)'/)[1];
   }
 
+  json(input) {
+    return JSON.stringify(input);
+  }
+
   togglePlayer() {
     this.player = !this.player;
   }

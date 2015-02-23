@@ -3,20 +3,26 @@ body {
   padding: 0;
 }
 
-description {
-  font-size: 10px;
-}
-
 iframe {
   border: 0;
 }
 
 .thumb {
-  width: 340px;
+  width: 300px;
 }
 
-.info-card {
-  height: 300px;
-  width: 90%;
-  font-size: 20px;
+.center {
+  text-align: center;
+}
+
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+}
+
+.fixed {
+  height: 125px;
 }

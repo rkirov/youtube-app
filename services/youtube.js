@@ -3,9 +3,11 @@ var gapi = window.gapi;
 export class YoutubeService {
   constructor() {
     this.cachedData = false;
+    this.searchTerm = 'angular';
   }
 
-  init() {
+  init(searchTerm) {
+    this.searchTerm = searchTerm; 
     var stored = this.cachedData ? JSON.parse(window.localStorage['videos']) : null;
     if (stored) {
       return Promise.resolve(stored);
@@ -19,7 +21,7 @@ export class YoutubeService {
   makeSearch() {
     return gapi.client.youtube.search.list({
       part: 'snippet',
-      q: 'angular',
+      q: this.searchTerm,
       kind: 'video',
       maxResults: 30
     }).then((response) => {

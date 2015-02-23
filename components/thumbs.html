@@ -1,7 +1,11 @@
 <style>
   .selected {
     color: red;
+
+  }
+  span {
+    font-size: 30px;
   }
 </style>
-<span [class.selected]="state == UP" (click)="onClick(UP)"> + </span> /
-<span [class.selected]="state == DOWN" (click)="onClick(DOWN)"> - </span>
+<span class="glyphicon glyphicon-thumbs-up" [class.selected]="state == UP" (click)="onClick(UP)"></span>
+<span class="glyphicon glyphicon-thumbs-down" [class.selected]="state == DOWN" (click)="onClick(DOWN)"></span>

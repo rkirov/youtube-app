@@ -41,6 +41,10 @@ app
 [x] add events
 [x] sync with npm
 [x] test with es5 compiled output
+[x] use form API
+[x] make transclusion work with emulated shadow dom (will solve video problem)
+[x] get bootstrap glyphs to show (or other thumbs)
+[x] insert google-youtube player into component
 [ ] bind to video properties
-[ ] insert polymer player
 [ ] test on real device
+[ ] replace all cdn with localhost

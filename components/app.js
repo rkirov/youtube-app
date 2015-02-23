@@ -1,4 +1,5 @@
 import * as ng from 'angular2/angular2';
+import * as forms from 'angular2/forms';
 import {LifeCycle} from 'angular2/src/core/life_cycle/life_cycle';
 import {Video} from 'components/video';
 import {YoutubeService} from 'services/youtube';
@@ -9,16 +10,24 @@ import {YoutubeService} from 'services/youtube';
 })
 @ng.Template({
   url: '/components/youtube_app.html',
-  directives: [ng.Foreach, ng.If, Video]
+  directives: [ng.Foreach, ng.If, Video, forms.ControlGroupDirective, forms.ControlNameDirective]
 })
 export class YoutubeApp {
-  videos;
   constructor(lc: LifeCycle, yt: YoutubeService) {
     this.videos = [];
     this.lc = lc;
-    yt.init().then((videos) => {
+    this.yt = yt;
+    this.form = new forms.ControlGroup({
+      "input": new forms.Control("angular")
+    });
+  }
+
+  fetch() {
+    var searchTerm = this.form.value.input;
+    this.videos = [];
+    this.yt.init(searchTerm).then((videos) => {
       this.videos = videos;
-      lc.tick();  // investigate why needed?
+      this.lc.tick();  // investigate why needed?
     });
   }
 }

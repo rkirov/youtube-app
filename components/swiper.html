@@ -1,6 +1,16 @@
-<div !if="leftShowing()" (swipeleft)="toggle()">
-  <content select=".left"></content>
-</div>
-<div !if="rightShowing()" (swiperight)="toggle()">
-  <content select=".right"></content>
+<div class="container-fluid">
+  <div class="row" [hidden]="rightShowing()">
+      <content select=".left"></content>
+      <div>
+        <button class="btn btn-primary" (click)="toggle()"> More </button>
+      </div>
+  </div>
+  <div class="row" [hidden]="leftShowing()">
+    <div>
+      <content select=".right"></content>
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="toggle()"> Back </button>
+    </div>
+  </div>
 </div>

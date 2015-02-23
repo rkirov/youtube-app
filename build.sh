@@ -12,3 +12,5 @@ cd node_modules/rtts_assert
 npm i
 node es5build.js -d ../rtts_assert-es5
 cd ../..
+
+bower install

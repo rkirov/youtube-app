@@ -9,6 +9,12 @@
     <script src="/node_modules/zone.js/zone.js"></script>
     <script src="/node_modules/zone.js/long-stack-trace-zone.js"></script>
     <script src="/node_modules/hammerjs/hammer.min.js"></script>
+    <!-- google-youtube web component-->
+    <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
+
+    <link rel="import" href="bower_components/google-youtube/google-youtube.html">
+    <link rel="style" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
     <script>
       // atscript with runtime-type assertions.
       System.traceurOptions = {
@@ -21,7 +27,7 @@
 
       System.paths = {
         // angular2
-        'angular2/*':'/node_modules/angular2-es5/*.js',
+        'angular2/*':'/node_modules/angular2/*.js',
         'rtts_assert/*': '/node_modules/rtts_assert-es5/*.js',
         // project own.
         'main': 'main.js',
@@ -31,13 +37,16 @@
     </script>
   </head>
   <body>
+
     <youtube-app>Loading... Please wait</youtube-app>
+
     <script>
       System.import('main').then(function(module) {
         module.main();
       }, console.log.bind(console));
     </script>
     <script src="https://apis.google.com/js/client.js?onload=googleClientReady"></script>
+
   </body>
 </html>
 

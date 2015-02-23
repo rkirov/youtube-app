@@ -1,17 +1,31 @@
 <style>
   @import url('components/video.css');
 </style>
-<img class="thumb" !if="!player" [src]="video.snippet.thumbnails.high.url"
-     (tap)="togglePlayer()">
-<iframe !if="player" [src]="url()"></iframe>
-<swiper>
-  <div class="left info-card">
-    <div>Viewed: {{video.statistics.viewCount}}</div>
-    <div>Likes: {{video.statistics.likeCount}}</div>
-    <div>Dislikes: {{video.statistics.dislikeCount}}</div>
-    <thumbs (change)="thumbsChange($event)"></thumbs>
+<div class="container-fluid">
+  <div class="row center">
+    <img class="thumb" *if="!player" [src]="video.snippet.thumbnails.high.url"
+         (click)="togglePlayer()">
+    {{video.id}}
+    <google-youtube *if="player" [videoId]="video.id"></google-youtube>
   </div>
-  <div class="right info-card">
-    <div class="description">{{video.snippet.description}}</div>
-  </div>
-</swiper>
+  <swiper class="row">
+    <div class="highlight left fixed">
+      <h4> Stats </h4>
+      <div class="col-xs-3">
+        <div>Viewed</div>
+        <div>Likes</div>
+        <div>Dislikes</div>
+      </div>
+      <div class="col-xs-3">
+        <div>{{video.statistics.viewCount}}</div>
+        <div>{{video.statistics.likeCount}}</div>
+        <div>{{video.statistics.dislikeCount}}</div>
+      </div>
+      <thumbs class="col-xs-5" (change)="thumbsChange($event)"></thumbs>
+    </div>
+    <div class="highlight right">
+      <h4> Description </h4>
+      <small>{{video.snippet.description}}</small>
+    </div>
+  </swiper>
+</div>
