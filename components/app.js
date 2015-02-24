@@ -4,14 +4,14 @@ import {SearchResult} from 'components/search_result';
 import {YoutubeService} from 'services/youtube';
 
 @ng.Component({
-  selector: 'youtube-app',
+  selector: 'app',
   componentServices: [YoutubeService]
 })
 @ng.Template({
   url: '/components/app.html',
   directives: [ng.Foreach, ng.If, SearchResult, forms.FormDirectives] 
 })
-export class YoutubeApp {
+export class App {
   videos;
   constructor(yt: YoutubeService) {
     this.videos = [];
