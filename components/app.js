@@ -1,11 +1,12 @@
 import * as ng from 'angular2/angular2';
 import * as forms from 'angular2/forms';
+import {bind} from 'angular2/di';
 import {SearchResult} from 'components/search_result';
-import {YoutubeService} from 'services/youtube';
+import {YoutubeService, LocalStorageYoutubeService} from 'services/youtube';
 
 @ng.Component({
   selector: 'app',
-  componentServices: [YoutubeService]
+  componentServices: [bind(YoutubeService).toClass(LocalStorageYoutubeService)]
 })
 @ng.Template({
   url: '/components/app.html',
@@ -17,7 +18,7 @@ export class App {
     this.videos = [];
     this.yt = yt;
     this.form = new forms.ControlGroup({
-      "input": new forms.Control("angular")
+      'input': new forms.Control('angularjs')
     });
   }
 

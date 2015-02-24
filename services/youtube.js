@@ -1,9 +1,18 @@
 var gapi = window.gapi;
 
 export class YoutubeService {
+  constructor() {}
+
+  init(searchTerm) {
+    throw 'not implemented'; 
+  }  
+}
+
+export class LocalStorageYoutubeService extends YoutubeService {
   constructor() {
     this.cachedData = false;
-    this.searchTerm = 'angular';
+    this.searchTerm = 'angularjs';
+    super();
   }
 
   init(searchTerm) {
