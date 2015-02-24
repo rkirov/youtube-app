@@ -4,10 +4,10 @@ import * as ng from 'angular2/angular2';
   selector: 'swiper',
 })
 @ng.Template({
-  url: '/components/swiper.html',
-  directives: [ng.Foreach, ng.If, Swiper]
+  url: '/components/eitherpanel.html',
+  directives: [ng.Foreach, ng.If]
 })
-export class Swiper {
+export class EitherPanel {
   constructor() {
     this.showing = 'left';
   }

@@ -1,6 +1,22 @@
 import * as ng from 'angular2/angular2';
-import {Swiper} from 'components/swiper';
+import {EitherPanel} from 'components/eitherpanel';
 import {Thumbs} from 'components/thumbs';
+
+// temp hack until attr bindings are available.
+@ng.Decorator({
+  selector: '[videoId]',
+  bind: {
+    'id': 'videoid'
+  }
+})
+class VideoId {
+  constructor(el: ng.NgElement) {
+    this.el = el;
+  }
+  set id(id) {
+    this.el.domElement.setAttribute('videoId', id);
+  }
+}
 
 @ng.Component({
   selector: 'youtube-video',
@@ -10,28 +26,20 @@ import {Thumbs} from 'components/thumbs';
 })
 @ng.Template({
   url: '/components/video.html',
-  directives: [ng.Foreach, ng.If, Swiper, Thumbs]
+  directives: [ng.Foreach, ng.If, EitherPanel, Thumbs, VideoId]
 })
 export class Video {
   player;
   constructor() {
-    this.player = false; 
+    this.player = false;
   }
 
   url() {
     return this.video.player.embedHtml.match(/src='([^']*)'/)[1];
   }
 
-  json(input) {
-    return JSON.stringify(input);
-  }
-
   togglePlayer() {
     this.player = !this.player;
-  }
-
-  onSwipe() {
-    console.log('swiped');
   }
 
   thumbsChange(event) {

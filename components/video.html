@@ -5,8 +5,8 @@
   <div class="row center">
     <img class="thumb" *if="!player" [src]="video.snippet.thumbnails.high.url"
          (click)="togglePlayer()">
-    {{video.id}}
-    <google-youtube *if="player" [videoId]="video.id"></google-youtube>
+    <!-- videoId="dQw4w9WgXcQ" -->
+    <google-youtube *if="player" [videoId]="video.id" ></google-youtube>
   </div>
   <swiper class="row">
     <div class="highlight left fixed">
