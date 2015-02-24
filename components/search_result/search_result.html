@@ -13,11 +13,6 @@
          (click)="togglePlayer()">
 
     <div *if="playerShowing">
-      <google-youtube var-player
-                      chromeless="0"
-                      [videoid]="video.id"
-                      (google-youtube-state-change)="setState($event.detail.data)">
-      </google-youtube>
       <button *if="!isPlaying()" class="md-button md-default-theme md-raised"
               (click)="player.play()">Play
       </button>
@@ -43,10 +38,9 @@
         </div>
         <thumbs flex="20" (change)="thumbsChange($event)"></thumbs>
       </div>
-    </div>
-    <div class="right">
-      <h3> Description </h3>
-      <small>{{video.snippet.description}}</small>
-    </div>
+      <div class="right">
+        <h3> Description </h3>
+        <small>{{video.snippet.description}}</small>
+      </div>
   </either-panel>
 </div>

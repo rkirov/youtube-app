@@ -4,9 +4,7 @@ import {Thumbs} from 'components/thumbs/thumbs';
 
 @Component({
   selector: 'search-result',
-  bind: {
-    'video': 'video'
-  }
+  bind: {}
 })
 @Template({
   url: '/components/search_result/search_result.html',

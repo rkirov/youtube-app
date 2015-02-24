@@ -11,8 +11,9 @@ import {YoutubeService, LocalStorageYoutubeService} from 'services/youtube';
   ]
 })
 @Template({
-  url: '/components/app/app.html',
-  directives: [Foreach, If, SearchResult, FormDirectives]
+  inline: 'BEFORE: <br><content></content><br>AFTER: ',
+  // url: '/components/app/app.html',
+  directives: [Foreach, If, FormDirectives]
 })
 export class App {
   videos;

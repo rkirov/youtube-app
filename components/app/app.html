@@ -17,8 +17,8 @@
   <div flex="50"> {{videos.length}}</div>
 </div>
 
-<md-card *foreach="var video in videos">
+<md-card *foreach="#video in videos">
   <md-card-content>
-    <search-result [video]="video"></search-result>
+    * {{video.snippet.title}}
   </md-card-content>
 </md-card>
