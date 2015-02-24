@@ -6,12 +6,9 @@
   <div class="row center">
     <img class="thumb" *if="!player" [src]="video.snippet.thumbnails.high.url"
          (click)="togglePlayer()">
-    <google-youtube *if="player" [videoid]="video.id" 
-         (google-youtube-state-change)="newState($event.detail.data)"></google-youtube>
      <div> State: {{state}} </div>
   </div>
-  <either-panel class="row">
-    <div class="left highlight fixed">
+    <div class="highlight fixed">
       <h4> Stats </h4>
       <div class="col-xs-3">
         <div>Viewed</div>
@@ -23,11 +20,10 @@
         <div>{{video.statistics.likeCount}}</div>
         <div>{{video.statistics.dislikeCount}}</div>
       </div>
-      <thumbs class="col-xs-5" (change)="thumbsChange($event)"></thumbs>
+      <thumbs class="col-xs-5"></thumbs>
     </div>
-    <div class="right highlight">
+    <div class="highlight">
       <h4> Description </h4>
       <small>{{video.snippet.description}}</small>
     </div>
-  </either-panel>
 </div>

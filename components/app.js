@@ -8,7 +8,8 @@ import {YoutubeService} from 'services/youtube';
   componentServices: [YoutubeService]
 })
 @ng.Template({
-  url: '/components/app.html',
+  inline: 'BEFORE: <br><content></content><br>AFTER: ',
+  // url: '/components/app.html',
   directives: [ng.Foreach, ng.If, SearchResult, forms.FormDirectives] 
 })
 export class App {

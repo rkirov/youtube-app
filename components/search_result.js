@@ -29,17 +29,15 @@ const State = {
 
 @ng.Component({
   selector: 'search-result',
-  bind: {
-    'video': 'video'
-  }
 })
 @ng.Template({
   url: '/components/search_result.html',
-  directives: [ng.Foreach, ng.If, EitherPanel, Thumbs]
+  directives: [ng.Foreach, ng.If, Thumbs]
 })
 export class SearchResult {
   state;
   player;
+  video;
   constructor() {
     this.player = false;
     this.state = 'thumbnail';
