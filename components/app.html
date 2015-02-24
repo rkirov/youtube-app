@@ -1,5 +1,5 @@
 <style>
-  @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css');
+  @import url('/css/bootstrap.min.css');
   * {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
@@ -18,6 +18,6 @@
   </div>
   <br>
   <div class="row" *foreach="var video in videos">
-    <youtube-video [video]="video"></youtube-video>
+    <search-result [video]="video"></search-result>
   </div>
 </div>

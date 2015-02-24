@@ -18,20 +18,35 @@ class VideoId {
   }
 }
 
+const State = {
+   '-1': 'unstarted',
+   '0': 'ended',
+   '1': 'playing',
+   '2': 'paused',
+   '3': 'buffering',
+   '5': 'video cued'
+};
+
 @ng.Component({
-  selector: 'youtube-video',
+  selector: 'search-result',
   bind: {
     'video': 'video'
   }
 })
 @ng.Template({
-  url: '/components/video.html',
-  directives: [ng.Foreach, ng.If, EitherPanel, Thumbs, VideoId]
+  url: '/components/search_result.html',
+  directives: [ng.Foreach, ng.If, EitherPanel, Thumbs]
 })
-export class Video {
+export class SearchResult {
+  state;
   player;
   constructor() {
     this.player = false;
+    this.state = 'thumbnail';
+  }
+
+  newState(state) {
+    this.state = State[state];
   }
 
   url() {

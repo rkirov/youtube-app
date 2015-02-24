@@ -46,5 +46,5 @@ app
 [x] get bootstrap glyphs to show (or other thumbs)
 [x] insert google-youtube player into component
 [ ] bind to video properties
-[ ] test on real device
+[ ] switch back to emulated mode
 [ ] replace all cdn with localhost

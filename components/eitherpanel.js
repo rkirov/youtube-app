@@ -1,7 +1,7 @@
 import * as ng from 'angular2/angular2';
 
 @ng.Component({
-  selector: 'swiper',
+  selector: 'either-panel',
 })
 @ng.Template({
   url: '/components/eitherpanel.html',

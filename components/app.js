@@ -1,6 +1,6 @@
 import * as ng from 'angular2/angular2';
 import * as forms from 'angular2/forms';
-import {Video} from 'components/video';
+import {SearchResult} from 'components/search_result';
 import {YoutubeService} from 'services/youtube';
 
 @ng.Component({
@@ -9,7 +9,7 @@ import {YoutubeService} from 'services/youtube';
 })
 @ng.Template({
   url: '/components/app.html',
-  directives: [ng.Foreach, ng.If, Video, forms.ControlGroupDirective, forms.ControlNameDirective]
+  directives: [ng.Foreach, ng.If, SearchResult, forms.FormDirectives] 
 })
 export class YoutubeApp {
   videos;

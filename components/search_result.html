@@ -1,14 +1,16 @@
 <style>
-  @import url('components/video.css');
+  @import url('/components/search_result.css');
+  @import url('/css/bootstrap.min.css');
 </style>
 <div class="container-fluid">
   <div class="row center">
     <img class="thumb" *if="!player" [src]="video.snippet.thumbnails.high.url"
          (click)="togglePlayer()">
-    <!-- videoId="dQw4w9WgXcQ" -->
-    <google-youtube *if="player" [videoId]="video.id" ></google-youtube>
+    <google-youtube *if="player" [videoid]="video.id" 
+         (google-youtube-state-change)="newState($event.detail.data)"></google-youtube>
+     <div> State: {{state}} </div>
   </div>
-  <swiper class="row">
+  <either-panel class="row">
     <div class="highlight left fixed">
       <h4> Stats </h4>
       <div class="col-xs-3">
@@ -27,5 +29,5 @@
       <h4> Description </h4>
       <small>{{video.snippet.description}}</small>
     </div>
-  </swiper>
+  </either-panel>
 </div>
