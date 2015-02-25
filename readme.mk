@@ -4,39 +4,12 @@
 
 # components
 app
- - title
+ - search
  - videos ([Video])
    - video (Video)
 	   - player
-		 - swipper (left - right)
+		 - eitherpanel (left - right)
 	   - thumbs up/down
-		 # displays likeCount
-		 - comments with input
-		 	 - comments
-		    	- comments
-
-# points to emphasize
-- template syntax
-  - binding from components to subcomponents (app to videos)
-	- !foreach(in videos to video)
-
-- web components
-	- shadow dom - Component with <content> swiper.
-  - template - ! is shortcut for template
-
-- events
- - thumbs up/down into video
-
-- zones (app can make the XHR and just set videos = response).
-
-- reusable components
-  - <videos data=[longVideos]>
-
-- forms (missing two-way data binding)
-  - comments component
-
-- web components integration
-  - polymer video player
 
 [x] add events
 [x] sync with npm
@@ -45,6 +18,6 @@ app
 [x] make transclusion work with emulated shadow dom (will solve video problem)
 [x] get bootstrap glyphs to show (or other thumbs)
 [x] insert google-youtube player into component
-[ ] bind to video properties
-[ ] switch back to emulated mode
-[ ] replace all cdn with localhost
+[x] bind to video properties
+[x] switch back to emulated mode
+[ ] replace as much as possible cdn with localhost
