@@ -6,7 +6,9 @@ import {YoutubeService, LocalStorageYoutubeService} from 'services/youtube';
 
 @ng.Component({
   selector: 'app',
-  componentServices: [bind(YoutubeService).toClass(LocalStorageYoutubeService)]
+  componentServices: [
+    bind(YoutubeService).toClass(LocalStorageYoutubeService)
+  ]
 })
 @ng.Template({
   url: '/components/app.html',

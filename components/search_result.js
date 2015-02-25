@@ -2,31 +2,6 @@ import * as ng from 'angular2/angular2';
 import {EitherPanel} from 'components/eitherpanel';
 import {Thumbs} from 'components/thumbs';
 
-// temp hack until attr bindings are available.
-@ng.Decorator({
-  selector: '[videoId]',
-  bind: {
-    'id': 'videoid'
-  }
-})
-class VideoId {
-  constructor(el: ng.NgElement) {
-    this.el = el;
-  }
-  set id(id) {
-    this.el.domElement.setAttribute('videoId', id);
-  }
-}
-
-const State = {
-   '-1': 'unstarted',
-   '0': 'ended',
-   '1': 'playing',
-   '2': 'paused',
-   '3': 'buffering',
-   '5': 'video cued'
-};
-
 @ng.Component({
   selector: 'search-result',
   bind: {
@@ -68,3 +43,12 @@ export class SearchResult {
     this.video.statistics.dislikeCount = dislikes + '';
   }
 }
+
+const State = {
+   '-1': 'unstarted',
+   '0': 'ended',
+   '1': 'playing',
+   '2': 'paused',
+   '3': 'buffering',
+   '5': 'video cued'
+};
