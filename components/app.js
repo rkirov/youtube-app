@@ -12,7 +12,7 @@ import {YoutubeService, LocalStorageYoutubeService} from 'services/youtube';
 })
 @ng.Template({
   url: '/components/app.html',
-  directives: [ng.Foreach, ng.If, SearchResult, forms.FormDirectives] 
+  directives: [ng.Foreach, ng.If, SearchResult, forms.FormDirectives]
 })
 export class App {
   videos;

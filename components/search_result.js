@@ -13,10 +13,10 @@ import {Thumbs} from 'components/thumbs';
   directives: [ng.Foreach, ng.If, EitherPanel, Thumbs]
 })
 export class SearchResult {
-  state;
-  player;
+  state: string;
+  playerShowing: boolean;
   constructor() {
-    this.player = false;
+    this.playerShowing = false;
     this.state = 'thumbnail';
   }
 
@@ -29,12 +29,12 @@ export class SearchResult {
   }
 
   togglePlayer() {
-    this.player = !this.player;
+    this.playerShowing = !this.playerShowing;
   }
 
   thumbsChange(event) {
-    var likes = parseInt(this.video.statistics.likeCount);
-    var dislikes = parseInt(this.video.statistics.dislikeCount);
+    var likes = parseInt(this.video.statistics.likeCount, 10);
+    var dislikes = parseInt(this.video.statistics.dislikeCount, 10);
 
     likes += event.upDiff;
     dislikes += event.downDiff;

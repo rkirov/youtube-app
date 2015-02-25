@@ -4,9 +4,9 @@
 </style>
 <div class="container-fluid">
   <div class="row center">
-    <img class="thumb" *if="!player" [src]="video.snippet.thumbnails.high.url"
+    <img class="thumb" *if="!playerShowing" [src]="video.snippet.thumbnails.high.url"
          (click)="togglePlayer()">
-    <google-youtube *if="player" [videoid]="video.id" 
+    <google-youtube *if="playerShowing" [videoid]="video.id"
          (google-youtube-state-change)="newState($event.detail.data)"></google-youtube>
      <div> State: {{state}} </div>
   </div>

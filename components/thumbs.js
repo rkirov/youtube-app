@@ -1,9 +1,9 @@
 import * as ng from 'angular2/angular2';
 import {EventEmitter} from 'angular2/src/core/annotations/events';
 
-var UP = 'up';
-var DOWN = 'down';
-var NONE = 'none';
+const UP = 'up';
+const DOWN = 'down';
+const NONE = 'none';
 
 @ng.Component({
   selector: 'thumbs'
@@ -13,8 +13,9 @@ var NONE = 'none';
   directives: []
 })
 export class Thumbs {
+  state: string;
   constructor(@EventEmitter('change') changer:Function) {
-    // to use in templates;
+    // for cleaner use in templates
     this.UP = UP;
     this.DOWN = DOWN;
     this.NONE = NONE;
