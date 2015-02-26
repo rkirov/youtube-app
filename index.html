@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  <head>
+ <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>youtube angular 2 demo app</title>
     <script src="/node_modules/systemjs/node_modules/es6-module-loader/node_modules/traceur/bin/traceur.js"></script>
@@ -9,6 +9,11 @@
     <script src="/node_modules/zone.js/zone.js"></script>
     <script src="/node_modules/zone.js/long-stack-trace-zone.js"></script>
     <script src="/node_modules/hammerjs/hammer.min.js"></script>
+
+    <!-- youtube api client -->
+    <script src="patch_youtube_client.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleClientReady"></script>
+
     <!-- google-youtube web component-->
     <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
     <link rel="import" href="bower_components/google-youtube/google-youtube.html">
@@ -42,9 +47,7 @@
   </head>
   <body>
 
-
     <app>Loading... Please wait</app>
-
 
     <script>
       System.import('main').then(function(module) {
@@ -52,7 +55,5 @@
         module.main();
       }, console.log.bind(console));
     </script>
-    <script src="patch_youtube_client.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=googleClientReady"></script>
   </body>
 </html>

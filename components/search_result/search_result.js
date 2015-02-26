@@ -1,16 +1,16 @@
-import * as ng from 'angular2/angular2';
-import {EitherPanel} from 'components/eitherpanel';
-import {Thumbs} from 'components/thumbs';
+import {Component, Template, Foreach, If} from 'angular2/angular2';
+import {EitherPanel} from 'components/eitherpanel/eitherpanel';
+import {Thumbs} from 'components/thumbs/thumbs';
 
-@ng.Component({
+@Component({
   selector: 'search-result',
   bind: {
     'video': 'video'
   }
 })
-@ng.Template({
-  url: '/components/search_result.html',
-  directives: [ng.Foreach, ng.If, EitherPanel, Thumbs]
+@Template({
+  url: '/components/search_result/search_result.html',
+  directives: [Foreach, If, EitherPanel, Thumbs]
 })
 export class SearchResult {
   state: string;

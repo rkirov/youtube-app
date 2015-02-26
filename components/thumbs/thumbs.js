@@ -1,15 +1,15 @@
-import * as ng from 'angular2/angular2';
+import {Component, Template} from 'angular2/angular2';
 import {EventEmitter} from 'angular2/src/core/annotations/events';
 
 const UP = 'up';
 const DOWN = 'down';
 const NONE = 'none';
 
-@ng.Component({
+@Component({
   selector: 'thumbs'
 })
-@ng.Template({
-  url: '/components/thumbs.html',
+@Template({
+  url: '/components/thumbs/thumbs.html',
   directives: []
 })
 export class Thumbs {

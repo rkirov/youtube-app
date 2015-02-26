@@ -8,7 +8,7 @@
          (click)="togglePlayer()">
     <google-youtube *if="playerShowing" [videoid]="video.id"
          (google-youtube-state-change)="newState($event.detail.data)"></google-youtube>
-     <div> State: {{state}} </div>
+    <div> State: {{state}} </div>
   </div>
   <either-panel class="row">
     <div class="left highlight fixed">

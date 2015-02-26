@@ -1,11 +1,11 @@
-import * as ng from 'angular2/angular2';
+import {Component, Template, If} from 'angular2/angular2';
 
-@ng.Component({
-  selector: 'either-panel',
+@Component({
+  selector: 'either-panel'
 })
-@ng.Template({
-  url: '/components/eitherpanel.html',
-  directives: [ng.Foreach, ng.If]
+@Template({
+  url: '/components/eitherpanel/eitherpanel.html',
+  directives: [If]
 })
 export class EitherPanel {
   constructor() {

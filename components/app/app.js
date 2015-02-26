@@ -1,26 +1,26 @@
-import * as ng from 'angular2/angular2';
-import * as forms from 'angular2/forms';
+import {Component, Template, Foreach, If} from 'angular2/angular2';
 import {bind} from 'angular2/di';
-import {SearchResult} from 'components/search_result';
+import {FormDirectives, ControlGroup, Control} from 'angular2/forms';
+import {SearchResult} from 'components/search_result/search_result';
 import {YoutubeService, LocalStorageYoutubeService} from 'services/youtube';
 
-@ng.Component({
+@Component({
   selector: 'app',
   componentServices: [
     bind(YoutubeService).toClass(LocalStorageYoutubeService)
   ]
 })
-@ng.Template({
-  url: '/components/app.html',
-  directives: [ng.Foreach, ng.If, SearchResult, forms.FormDirectives]
+@Template({
+  url: '/components/app/app.html',
+  directives: [Foreach, If, SearchResult, FormDirectives]
 })
 export class App {
   videos;
   constructor(yt: YoutubeService) {
     this.videos = [];
     this.yt = yt;
-    this.form = new forms.ControlGroup({
-      'input': new forms.Control('angularjs')
+    this.form = new ControlGroup({
+      'input': new Control('angularjs')
     });
   }
 
