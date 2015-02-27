@@ -7,8 +7,8 @@ iframe {
   border: 0;
 }
 
-.thumb {
-  width: 300px;
+.thumbnail {
+  width: 100%;
 }
 
 .center {

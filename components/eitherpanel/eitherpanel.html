@@ -1,19 +1,19 @@
 <style>
-  @import url('/css/bootstrap.min.css');
+  @import url('/css/angular-material.css');
 </style>
-<div class="container-fluid">
-  <div class="row" [hidden]="rightShowing()">
+<div>
+  <div [hidden]="rightShowing()">
       <content select=".left"></content>
       <div>
-        <button class="btn btn-primary" (click)="toggle()"> More </button>
+        <button class="md-button md-raised md-default-theme" (click)="toggle()"> More </button>
       </div>
   </div>
-  <div class="row" [hidden]="leftShowing()">
+  <div [hidden]="leftShowing()">
     <div>
       <content select=".right"></content>
     </div>
     <div>
-      <button class="btn btn-primary" (click)="toggle()"> Back </button>
+      <button class="md-button md-raised md-default-theme" (click)="toggle()"> Back </button>
     </div>
   </div>
 </div>

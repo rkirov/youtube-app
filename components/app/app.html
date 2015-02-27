@@ -1,23 +1,24 @@
 <style>
-  @import url('/css/bootstrap.min.css');
-  * {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+  @import url('/css/angular-material.css');
 </style>
-<div class="container-fluid">
-  <h1>Angular 2 <br> Youtube Demo</h1>
-  <div class="row" [control-group]="form">
-    <div class="col-xs-4"> Search </div>
-    <input class="col-xs-6" control-name="input" type="text">
-    <button (click)="fetch()">Fetch</button>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-xs-4"> Shown </div>
-    <div class="col-xs-6"> {{videos.length}} </div>
-  </div>
-  <br>
-  <div class="row" *foreach="var video in videos">
-    <search-result [video]="video"></search-result>
-  </div>
+<h1>Angular 2 <br> Youtube Demo</h1>
+
+<div layout="row" [control-group]="form">
+  <div flex="30"> Search</div>
+  <input flex="50" control-name="input" type="text">
+  <button flex="20" class="md-button md-primary md-raised md-default-theme"
+          (click)="fetch()">Fetch
+  </button>
 </div>
+<br>
+
+<div layout="row">
+  <div flex="30"> Shown</div>
+  <div flex="50"> {{videos.length}}</div>
+</div>
+
+<md-card *foreach="var video in videos">
+  <md-card-content>
+    <search-result [video]="video"></search-result>
+  </md-card-content>
+</md-card>

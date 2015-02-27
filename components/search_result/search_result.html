@@ -1,32 +1,40 @@
 <style>
-  @import url('/components/search_result.css');
-  @import url('/css/bootstrap.min.css');
+  @import url('/components/search_result/search_result.css');
+  @import url('/css/angular-material.css');
+  * {
+    font-family: RobotoDraft, Roboto, Helvetica, sans-serif;
+  }
 </style>
-<div class="container-fluid">
+<div>
   <div class="row center">
-    <img class="thumb" *if="!playerShowing" [src]="video.snippet.thumbnails.high.url"
+    <img class="thumbnail" *if="!playerShowing"
+         [src]="video.snippet.thumbnails.high.url"
          (click)="togglePlayer()">
-    <google-youtube *if="playerShowing" [videoid]="video.id"
-         (google-youtube-state-change)="newState($event.detail.data)"></google-youtube>
-    <div> State: {{state}} </div>
+    <google-youtube *if="playerShowing"
+                    [videoid]="video.id"
+                    (google-youtube-state-change)="newState($event.detail.data)">
+    </google-youtube>
+    <div> <strong>Current State</strong> - {{state}}</div>
   </div>
-  <either-panel class="row">
-    <div class="left highlight fixed">
-      <h4> Stats </h4>
-      <div class="col-xs-3">
-        <div>Viewed</div>
-        <div>Likes</div>
-        <div>Dislikes</div>
+  <either-panel>
+    <div layout="column" class="left">
+      <h3> Stats </h3>
+      <div layout="row">
+        <div flex="50">
+          <div>Viewed</div>
+          <div>Likes</div>
+          <div>Dislikes</div>
+        </div>
+        <div flex="30">
+          <div>{{video.statistics.viewCount}}</div>
+          <div>{{video.statistics.likeCount}}</div>
+          <div>{{video.statistics.dislikeCount}}</div>
+        </div>
+        <thumbs flex="20" (change)="thumbsChange($event)"></thumbs>
       </div>
-      <div class="col-xs-3">
-        <div>{{video.statistics.viewCount}}</div>
-        <div>{{video.statistics.likeCount}}</div>
-        <div>{{video.statistics.dislikeCount}}</div>
-      </div>
-      <thumbs class="col-xs-5" (change)="thumbsChange($event)"></thumbs>
     </div>
-    <div class="right highlight">
-      <h4> Description </h4>
+    <div class="right">
+      <h3> Description </h3>
       <small>{{video.snippet.description}}</small>
     </div>
   </either-panel>

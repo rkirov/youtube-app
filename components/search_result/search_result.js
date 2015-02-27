@@ -2,22 +2,23 @@ import {Component, Template, Foreach, If} from 'angular2/angular2';
 import {EitherPanel} from 'components/eitherpanel/eitherpanel';
 import {Thumbs} from 'components/thumbs/thumbs';
 
-@Component({
+@ Component({
   selector: 'search-result',
   bind: {
     'video': 'video'
   }
 })
-@Template({
+@ Template({
   url: '/components/search_result/search_result.html',
   directives: [Foreach, If, EitherPanel, Thumbs]
 })
 export class SearchResult {
-  state: string;
-  playerShowing: boolean;
+  state:string;
+  playerShowing:boolean;
+
   constructor() {
     this.playerShowing = false;
-    this.state = 'thumbnail';
+    this.state = State[-2];
   }
 
   newState(state) {
@@ -30,6 +31,7 @@ export class SearchResult {
 
   togglePlayer() {
     this.playerShowing = !this.playerShowing;
+    this.state = State[-1];
   }
 
   thumbsChange(event) {
@@ -45,10 +47,11 @@ export class SearchResult {
 }
 
 const State = {
-   '-1': 'unstarted',
-   '0': 'ended',
-   '1': 'playing',
-   '2': 'paused',
-   '3': 'buffering',
-   '5': 'video cued'
+  '-2': 'thumbnail',
+  '-1': 'unstarted',
+  '0': 'ended',
+  '1': 'playing',
+  '2': 'paused',
+  '3': 'buffering',
+  '5': 'video cued'
 };
