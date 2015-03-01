@@ -21,3 +21,12 @@ app
 [x] bind to video properties
 [x] switch back to emulated mode
 [ ] replace as much as possible cdn with localhost
+
+# patches
+- zone.js 
+	- https://github.com/angular/zone.js/issues/52 (patch locally in node_modules/zone.js)
+- google-youtube element
+	- support property changes (add bug here)
+	- patched locally
+- youtube api
+	- uses a custom promise lib that zone.js doesn't support (patch in patch_youtube_client.js)
