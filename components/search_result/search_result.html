@@ -13,10 +13,10 @@
          (click)="togglePlayer()">
 
     <div *if="playerShowing">
-      <google-youtube var-player
-                      chromeless="0"
-                      [videoid]="video.id"
-                      (google-youtube-state-change)="setState($event.detail.data)">
+      <google-youtube chromeless="0"
+         var-player
+         [videoid]="video.id"
+         (google-youtube-state-change)="setState($event.detail.data)">
       </google-youtube>
       <button *if="!isPlaying()" class="md-button md-default-theme md-raised"
               (click)="player.play()">Play
