@@ -1,6 +1,7 @@
 <style>
   @import url('/components/search_result/search_result.css');
   @import url('/css/angular-material.css');
+
   * {
     font-family: RobotoDraft, Roboto, Helvetica, sans-serif;
   }
@@ -10,15 +11,25 @@
     <img class="thumbnail" *if="!playerShowing"
          [src]="video.snippet.thumbnails.high.url"
          (click)="togglePlayer()">
-    <google-youtube *if="playerShowing"
-                    [videoid]="video.id"
-                    (google-youtube-state-change)="newState($event.detail.data)">
-    </google-youtube>
-    <div> <strong>Current State</strong> - {{state}}</div>
+
+    <div *if="playerShowing">
+      <google-youtube var-player
+                      chromeless="0"
+                      [videoid]="video.id"
+                      (google-youtube-state-change)="setState($event.detail.data)">
+      </google-youtube>
+      <button *if="!isPlaying()" class="md-button md-default-theme md-raised"
+              (click)="player.play()">Play
+      </button>
+      <button *if="isPlaying()" class="md-button md-default-theme md-raised"
+              (click)="player.pause()">Pause
+      </button>
+    </div>
   </div>
   <either-panel>
     <div layout="column" class="left">
       <h3> Stats </h3>
+
       <div layout="row">
         <div flex="50">
           <div>Viewed</div>

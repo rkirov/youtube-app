@@ -2,27 +2,31 @@ import {Component, Template, Foreach, If} from 'angular2/angular2';
 import {EitherPanel} from 'components/eitherpanel/eitherpanel';
 import {Thumbs} from 'components/thumbs/thumbs';
 
-@ Component({
+@Component({
   selector: 'search-result',
   bind: {
     'video': 'video'
   }
 })
-@ Template({
+@Template({
   url: '/components/search_result/search_result.html',
   directives: [Foreach, If, EitherPanel, Thumbs]
 })
 export class SearchResult {
-  state:string;
-  playerShowing:boolean;
+  state: string;
+  playerShowing: boolean;
 
   constructor() {
     this.playerShowing = false;
     this.state = State[-2];
   }
 
-  newState(state) {
+  setState(state) {
     this.state = State[state];
+  }
+
+  isPlaying() {
+    return this.state == State[1];
   }
 
   url() {

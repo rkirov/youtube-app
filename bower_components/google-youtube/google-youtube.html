@@ -321,6 +321,10 @@ The standard set of [YouTube player events](https://developers.google.com/youtub
        *   - Whatever happens, cache the result in localStorage.
        */
       _determinePlaySupported: function() {
+        // TODO(rado): figure out why is support incorrectly determined and file a bug.
+        this.playsupported = true;
+        return;
+
         // If playsupported isn't already being overridden by the page using this component, then attempt
         // to determine if it's supported.
         // This is deliberately checking with ==, to match either undefined or null.

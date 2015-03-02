@@ -27,6 +27,7 @@ app
 	- https://github.com/angular/zone.js/issues/52 (patch locally in node_modules/zone.js)
 - google-youtube element
 	- support property changes (add bug here)
+	- incorrectly determines player support (add bug here)
 	- patched locally
 - youtube api
 	- uses a custom promise lib that zone.js doesn't support (patch in patch_youtube_client.js)
