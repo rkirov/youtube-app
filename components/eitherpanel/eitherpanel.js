@@ -4,7 +4,7 @@ import {Component, Template, If} from 'angular2/angular2';
   selector: 'either-panel'
 })
 @Template({
-  url: '/components/eitherpanel/eitherpanel.html',
+  url: 'components/eitherpanel/eitherpanel.html',
   directives: [If]
 })
 export class EitherPanel {

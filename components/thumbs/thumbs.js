@@ -9,7 +9,7 @@ const NONE = 'none';
   selector: 'thumbs'
 })
 @Template({
-  url: '/components/thumbs/thumbs.html',
+  url: 'components/thumbs/thumbs.html',
   directives: [NonBindable]
 })
 export class Thumbs {

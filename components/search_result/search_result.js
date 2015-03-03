@@ -9,7 +9,7 @@ import {Thumbs} from 'components/thumbs/thumbs';
   }
 })
 @Template({
-  url: '/components/search_result/search_result.html',
+  url: 'components/search_result/search_result.html',
   directives: [Foreach, If, EitherPanel, Thumbs]
 })
 export class SearchResult {
