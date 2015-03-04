@@ -1,5 +1,4 @@
 <style>
-  @import url('angular-material.css');
   img {
     border: 1px transparent solid;
   }
@@ -22,11 +21,5 @@
     background: url('thumbs_down_selected.svg');
   }
 </style>
-<!-- shadow dom + web fonts -> issues 
-<span class="glyphicon glyphicon-thumbs-up" [class.selected]="state == UP" (click)="onClick(UP)"></span>
-<span class="glyphicon glyphicon-thumbs-down" [class.selected]="state == DOWN" (click)="onClick(DOWN)"></span>
-<img src="assets/glyphicons-344-thumbs-up.png" [class.selected]="state == UP" (click)="onClick(UP)"></img>
-<img src="assets/glyphicons-345-thumbs-down.png" [class.selected]="state == DOWN" (click)="onClick(DOWN)"></img>
--->
 <span class="thumb up" [class.selected]="state == UP" (click)="onClick(UP)"></span>
 <span class="thumb down" [class.selected]="state == DOWN" (click)="onClick(DOWN)"></span>
