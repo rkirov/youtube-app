@@ -1,4 +1,4 @@
-import {Component, Template, NonBindable} from 'angular2/angular2';
+import {Component, Template} from 'angular2/angular2';
 import {EventEmitter} from 'angular2/src/core/annotations/events';
 
 const UP = 'up';
@@ -10,7 +10,7 @@ const NONE = 'none';
 })
 @Template({
   url: 'components/thumbs/thumbs.html',
-  directives: [NonBindable]
+  directives: []
 })
 export class Thumbs {
   state: string;

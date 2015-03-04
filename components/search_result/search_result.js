@@ -15,6 +15,7 @@ import {Thumbs} from 'components/thumbs/thumbs';
 export class SearchResult {
   state: string;
   playerShowing: boolean;
+  video;
 
   constructor() {
     this.playerShowing = false;
