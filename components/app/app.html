@@ -17,7 +17,7 @@
   <div flex="50"> {{videos.length}}</div>
 </div>
 
-<md-card *foreach="var video in videos">
+<md-card *for="var video of videos">
   <md-card-content>
     <search-result [video]="video"></search-result>
   </md-card-content>

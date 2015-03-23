@@ -1,4 +1,4 @@
-import {Component, Template, Foreach, If} from 'angular2/angular2';
+import {Component, Template, For, If} from 'angular2/angular2';
 import {EitherPanel} from 'components/eitherpanel/eitherpanel';
 import {Thumbs} from 'components/thumbs/thumbs';
 
@@ -10,7 +10,7 @@ import {Thumbs} from 'components/thumbs/thumbs';
 })
 @Template({
   url: 'components/search_result/search_result.html',
-  directives: [Foreach, If, EitherPanel, Thumbs]
+  directives: [For, If, EitherPanel, Thumbs]
 })
 export class SearchResult {
   state: string;

@@ -1,5 +1,4 @@
-import {Component, Template} from 'angular2/angular2';
-import {EventEmitter} from 'angular2/src/core/annotations/events';
+import {Component, Template, EventEmitter} from 'angular2/angular2';
 
 const UP = 'up';
 const DOWN = 'down';
