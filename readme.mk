@@ -1,25 +1,23 @@
 # Components
 - App
 - SearchResult
-- eitherpanel
-- thumbs
+- Eitherpanel
+- Thumbs
 
-# Sharp Edges
-The application does not fully work out-of-the-box without the following patches.
+# Baked in dependencies
+Due to the fast changing pace of angular 2 development node_module deps are
+backed in this repo.
+Angular2 version baked in
+https://github.com/angular/angular/commit/47c1a0f3814c888509f2e653d57b33727046103d
 
-## need to be patched
-- zone.js
-	- https://github.com/angular/zone.js/issues/52 (need to patch locally in node_modules/zone.js)
-- angular 2
-	- https://github.com/angular/angular/issues/776 (need to patch locally)
-
-## patches already in the repo
-- google-youtube web component
+## patches in the repo
+- google-youtube web component (patched locally and checked in bower_components)
 	- support property changes (add bug here)
 	- incorrectly determines player support (add bug here)
-	- patched locally and checked in bower_components
 - youtube api
 	- uses a custom promise lib that zone.js doesn't support (patched in patch_youtube_client.js)
+- zone.js
+	- https://github.com/angular/zone.js/issues/52 (patched locally in node_modules/zone.js)
 
 ## google youtube api key
 - Will be revoked soon after application is public.
