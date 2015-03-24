@@ -21,7 +21,9 @@ export class LocalStorageYoutubeService extends YoutubeService {
     if (stored) {
       return Promise.resolve(stored);
     } else {
-      gapi.client.setApiKey('AIzaSyDRyLXw7Q9lLjtzO8nVO102zQ7vh0_p_GU');
+      //gapi.client.setApiKey('AIzaSyDRyLXw7Q9lLjtzO8nVO102zQ7vh0_p_GU');
+      gapi.client.setApiKey('AIzaSyAGsybtMggz_ROLgUAKnEb8ypxRJ4AGgw8');
+
       return gapi.client.load('youtube', 'v3')
         .then(this.makeSearch.bind(this));
     }
