@@ -1,7 +1,11 @@
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+
 <style>
   @import url('angular-material.css');
 </style>
 <h1>Angular 2 <br> Youtube Demo</h1>
+
+    <paper-button raised (click)="toaster.show()" [text-content]="paper button">polymer button INSIDE angular 2 component directive</paper-button>
 
 <div layout="row" [control-group]="form">
   <div flex="30"> Search</div>
