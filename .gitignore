@@ -1,2 +1,5 @@
 *.swo
 .idea
+*.swp
+src/**/*.js
+node_modules

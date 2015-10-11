@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>youtube angular 2 demo app</title>
+
+
+    <script src="../node_modules/systemjs/dist/system.js"></script>
+    <script>
+      System.defaultJSExtensions = false;
+      System.config({
+        baseURL: '/',
+        packages: {'src': {defaultExtension: 'js'}}
+      });
+    </script>
+    <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- youtube api client -->
+    <script src="../patch_youtube_client.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleClientReady"></script>
+
+    <!-- google-youtube web component-->
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="../bower_components/google-youtube/google-youtube.html">
+
+    <link rel="style" href="../css/angular-material.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic">
+     <script>
+    </script>
+    <style>
+      body {
+        width: 360px;
+        margin: 0 auto;
+      }
+      * {
+          font-family: RobotoDraft, Roboto, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+
+    <app>Loading... Please wait</app>
+
+    <script>
+      System.import('../src/main.js');
+    </script>
+  </body>
+</html>

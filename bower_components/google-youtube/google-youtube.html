@@ -103,7 +103,7 @@ The standard set of [YouTube player events](https://developers.google.com/youtub
        * [the documented](https://developers.google.com/youtube/iframe_api_reference#onStateChange)
        * states.
        *
-       * @event google-youtube-state-change
+       * @event googleyoutubestatechange
        * @param {Object} e Event parameters.
        */
 
@@ -596,7 +596,7 @@ The standard set of [YouTube player events](https://developers.google.com/youtub
                 }
               }
 
-              this.fire('google-youtube-state-change', e);
+              this.fire('googleyoutubestatechange', e);
             }.bind(this),
             onError: function(e) {
               // Set the player state to 0 ('ended'), since playback will have stopped.

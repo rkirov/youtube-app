@@ -1,21 +1,16 @@
 {
   "name": "youtube-demo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple youtube app using Angular 2.0",
-  "main": "main.js",
+  "main": "main.ts",
   "dependencies": {
-    "angular2": "^2.0.0-alpha.7.dev",
-    "es6-module-loader": "^0.14.0",
-    "hammerjs": "^2.0.4",
-    "rtts_assert": "^2.0.0-alpha.8",
-    "systemjs": "^0.14.1",
-    "traceur": "0.0.85",
-    "zone.js": "^0.4.0"
+    "angular2": "2.0.0-alpha.40",
+    "systemjs": "0.18.17"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Rado Kirov",
   "license": "MIT"
 }

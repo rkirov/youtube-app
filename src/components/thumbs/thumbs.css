@@ -1,0 +1,21 @@
+img {
+    border: 1px transparent solid;
+}
+.thumb {
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+.up {
+    background: url('thumbs_up_black.svg');
+}
+.down {
+    background: url('thumbs_down_black.svg');
+}
+.up.selected {
+    background: url('thumbs_up_selected.svg');
+}
+.down.selected {
+    background: url('thumbs_down_selected.svg');
+}

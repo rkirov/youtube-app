@@ -1,4 +1,26 @@
 function googleClientReady() {
+
+  // Zone.js no longer exposes those two utils. Copy-pasta.
+  var patchPrototype = function (obj, fnNames) {
+    fnNames.forEach(function (name) {
+      var delegate = obj[name];
+      if (delegate) {
+        obj[name] = function () {
+          return delegate.apply(this, bindArguments(arguments));
+        };
+      }
+    });
+  };
+
+  var bindArguments = function (args) {
+    for (var i = args.length - 1; i >= 0; i--) {
+      if (typeof args[i] === 'function') {
+        args[i] = zone.bind(args[i]);
+      }
+    }
+    return args;
+  };
+
   /**
    * This patches the Promise library of the GoogleClient. If it would be using native promises 
    * this would not be necessary.
@@ -11,7 +33,7 @@ function googleClientReady() {
   gapi.client.load = (function(delegate) {
     return function(name, ver) {
       var promise = delegate.call(this, name, ver);
-      Zone.patchPrototype(promise.__proto__, [
+      patchPrototype(promise.__proto__, [
         'then',
         'catch'
       ]);
@@ -19,4 +41,6 @@ function googleClientReady() {
       return promise;
     }
   })(gapi.client.load);
+
+
 }

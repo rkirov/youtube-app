@@ -1,0 +1,48 @@
+<style>
+  @import url('search_result.css');
+  @import url('angular-material.css');
+</style>
+<div>
+  <div class="row center">
+    <img class="thumbnail" *ng-if="!playerShowing"
+         [src]="video.snippet.thumbnails.high.url"
+         (click)="togglePlayer()">
+
+    <div *ng-if="playerShowing">
+      <google-youtube chromeless="0"
+         #player
+         [videoid]="video.id"
+         (googleyoutubestatechange)="setState($event.detail.data)">
+      </google-youtube>
+      <button *ng-if="!isPlaying()" class="md-button md-default-theme md-raised"
+              (click)="player.play()">Play
+      </button>
+      <button *ng-if="isPlaying()" class="md-button md-default-theme md-raised"
+              (click)="player.pause()">Pause
+      </button>
+    </div>
+  </div>
+  <either-panel>
+    <div layout="column" class="left">
+      <h3> Stats </h3>
+
+      <div layout="row">
+        <div flex="50">
+          <div>Viewed</div>
+          <div>Likes</div>
+          <div>Dislikes</div>
+        </div>
+        <div flex="30">
+          <div>{{video.statistics.viewCount}}</div>
+          <div>{{video.statistics.likeCount}}</div>
+          <div>{{video.statistics.dislikeCount}}</div>
+        </div>
+        <thumbs flex="20" (change)="thumbsChange($event)"></thumbs>
+      </div>
+    </div>
+    <div class="right">
+      <h3> Description </h3>
+      <small>{{video.snippet.description}}</small>
+    </div>
+  </either-panel>
+</div>

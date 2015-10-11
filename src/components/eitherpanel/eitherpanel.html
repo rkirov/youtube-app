@@ -1,0 +1,19 @@
+<style>
+  @import url('angular-material.css');
+</style>
+<div>
+  <div [hidden]="rightShowing()">
+      <ng-content select=".left"></ng-content>
+      <div>
+        <button class="md-button md-raised md-default-theme" (click)="toggle()"> More </button>
+      </div>
+  </div>
+  <div [hidden]="leftShowing()">
+    <div>
+      <ng-content select=".right"></ng-content>
+    </div>
+    <div>
+      <button class="md-button md-raised md-default-theme" (click)="toggle()"> Back </button>
+    </div>
+  </div>
+</div>
